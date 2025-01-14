@@ -33,7 +33,13 @@ public class ArrayFunHouseTwo
 	{
 		int lastVal = 1000;
 
-		for ()
+		for (int x : numArray)
+		{
+			if (lastVal<x)
+				return false;
+
+			lastVal = x;
+		}
 
 		return true;
 	}
@@ -43,6 +49,19 @@ public class ArrayFunHouseTwo
 	//[1,2,3,4,5,6,7,8,9,10,11,6],3,5  would return [6,7,8]
 	public static int[] getCountValuesBiggerThanX(int[] numArray, int count, int x)
 	{
-		return null;
+
+		int[] greater = new int[count];
+		int pos = 0;
+
+		for (int i : numArray)
+		{
+			if (i>x && pos<count)
+			{
+				greater[pos] = i;
+				pos++;
+			}
+		}
+
+		return greater;
 	}
 }
